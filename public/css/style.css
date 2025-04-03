@@ -1,0 +1,197 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap";
+
+body {
+    font-family: "Inter";
+    background-image: url("../image/giphy.gif"); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: white;
+    text-decoration: none;
+}
+
+html {
+    background-color: transparent; /* Make sure this is transparent */
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1f2937;
+}
+
+img {
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 640px) {
+    .padding {
+        padding-left: 23%;
+        padding-right: 23%;
+    }
+    .head {
+        padding-top: 3%;
+    }
+    .section {
+        padding-top: 4%;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 10px;
+    }
+    .grid-container > div {
+        text-align: left;
+    }
+    .lea-ym-np {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .padding {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .head {
+        padding-top: 7%;
+    }
+    .section {
+        padding-top: 8%;
+    }
+}
+
+.head-img {
+    border-radius: 999%;
+    border: solid 3px var(--florence-text-color);
+}
+
+.florence-text {
+    color: #434989;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.florence-text-btn:hover {
+    color: var(--florence-text-color);
+}
+
+.ht-margint {
+    margin-top: 40px;
+}
+
+.name-text {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.head-desc {
+    font-size: 18px;
+}
+
+.pr-text {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.pnf-text {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.about-text {
+    font-size: 18px;
+}
+
+.florence-text-nc {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.techs-name {
+    font-size: 16px;
+}
+
+.career-title {
+    font-size: 18px;
+}
+
+.career-desc {
+    font-size: 16px;
+}
+
+.navbar-img {
+    cursor: pointer;
+}
+
+.projects-card {
+    background-color: #131217;
+}
+
+.projects-title {
+    font-size: 18px;
+}
+
+.projects-desc {
+    font-size: 16px;
+}
+
+.tb-color-bg {
+    background-color: var(--florence-text-color);
+}
+
+.footer {
+    padding-bottom: 1%;
+}
+
+.right-align {
+    float: right;
+}
+
+.footer-icon {
+    font-size: 18px;
+}
+
+.navbar-item:hover {
+    background-color: #1e293b;
+    color: unset;
+}
+
+.footer-banner {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.navbar {
+    backdrop-filter: blur(15px);
+}
+
+.projects-card-i {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cursor-notallowed {
+    cursor: not-allowed;
+}
+
+:root {
+    --body-bg: #111827; /* You can remove this if not needed */
+    --navbar-bg: #111827;
+    --head-img-bc: #1f2937;
+    --florence-text-color: #0b0b12;
+}

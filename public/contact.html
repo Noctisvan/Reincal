@@ -4,39 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="https://cdn.discordapp.com/attachments/768038699434508321/1356933967021998151/IMG_20250402_180907.png">
 </head>
 <body>
-    <div class="background"></div>  <!-- Background container -->
-    
+    <div class="background"></div>  
+
     <div class="container">
         <header>
-            <h1>Contact Me</h1>
-            <p>Have a question? Send me a message!</p>
+            <h1>📩 Contact Me</h1>
+            <p>Got questions? Let's talk!</p>
         </header>
 
         <form class="contact-form">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" class="input" required>
+            <div class="input-group">
+                <input type="text" id="name" name="name" class="input" data-input="1" required>
+                <label for="name" data-label="1">Your Name</label>
+            </div>
 
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" class="input" required>
+            <div class="input-group">
+                <input type="email" id="email" name="email" class="input" data-input="2" required>
+                <label for="email" data-label="2">Your Email</label>
+            </div>
 
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" class="input" required></textarea>
+            <div class="input-group">
+                <textarea id="message" name="message" rows="5" class="input" data-input="3" required></textarea>
+                <label for="message" data-label="3">Your Message</label>
+            </div>
 
-            <button type="submit">Send Message</button>
+            <button type="submit">🚀 Send Message</button>
         </form>
 
         <div class="pop none">
-            <div class="loader"></div>
+            <div class="loader none"></div>
         </div>
 
         <div class="response"></div>
-        
+
         <div class="message-sent" id="message-sent">
             <p>✅ Your message has been sent!</p>
         </div>
@@ -49,7 +55,7 @@
             <p>&copy; 2025 Kalrex. All rights reserved.</p>
         </footer>
     </div>
-    
-    <script src="/js/main.js"></script>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

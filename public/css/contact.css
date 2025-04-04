@@ -5,120 +5,107 @@
     box-sizing: border-box;
 }
 
+/* Futuristic Background */
 body {
     font-family: 'Poppins', sans-serif;
-    background: url("../image/giphy.gif") no-repeat center center/cover;
+    background: radial-gradient(circle, #0a192f, #020c1b);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
+    overflow: hidden;
 }
 
-/* Container */
+/* Glassmorphic Container */
 .container {
-    max-width: 450px;
+    max-width: 500px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.1); /* Glass effect */
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 132, 255, 0.3);
     text-align: center;
+    position: relative;
 }
 
-/* Header */
-header h1 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #00aaff;
-}
-
-header p {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-/* Form */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-size: 14px;
-    margin: 5px 0;
+/* Input Group */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
     text-align: left;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 8px;
+/* Label Styling */
+label {
+    display: block;
     font-size: 14px;
-    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Input Styling */
+.input {
+    font-size: 14px;
+    padding: 12px 15px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
     color: white;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
 }
 
-input::placeholder, textarea::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+.input:focus {
+    border-color: #00aaff;
+    box-shadow: 0 0 10px rgba(0, 132, 255, 0.4);
 }
 
-/* Button */
+/* Submit Button */
 button {
+    width: 100%;
     padding: 12px;
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 button:hover {
     background: linear-gradient(135deg, #0072ff, #00c6ff);
+    box-shadow: 0px 0px 15px rgba(0, 132, 255, 0.8);
+    transform: scale(1.05);
 }
 
-/* Footer */
-footer {
-    margin-top: 15px;
-    font-size: 12px;
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
 }
 
 .social-links a {
-    color: #00aaff;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    margin: 0 10px;
+    transition: color 0.3s;
 }
 
 .social-links a:hover {
-    text-decoration: underline;
+    color: #00c6ff;
 }
 
-/* Responsive */
-@media (max-width: 500px) {
-    .container {
-        width: 90%;
-        padding: 15px;
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
-
-    input, textarea {
-        font-size: 12px;
-    }
-
-    button {
-        font-size: 14px;
-    }
-    
-    /* Message Sent Notification */
+/* Message Sent Notification */
 .message-sent {
     position: fixed;
     bottom: 20px;
@@ -135,23 +122,33 @@ footer {
     transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Show Animation */
 .message-sent.show {
     display: block;
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
 
-/* Hide after 3s */
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
+/* Responsive */
 @media (max-width: 500px) {
-    .message-sent {
-        font-size: 12px;
-        padding: 10px 15px;
+    .container {
+        width: 90%;
+        padding: 20px;
     }
-}
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .input {
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

@@ -99,3 +99,13 @@ document.addEventListener("DOMContentLoaded", function() {
         form.reset();
     });
 });
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      // Here you can add your form submission logic (e.g., AJAX request)
+
+      // Show the checklist
+      document.getElementById('checklist').style.display = 'block';
+      // Optionally, reset the form
+      this.reset();
+    });

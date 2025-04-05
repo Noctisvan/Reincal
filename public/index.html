@@ -37,17 +37,48 @@
 
     <div class="tb-color-bg w-full py-1"></div>
 
-    <div class="navbar sticky-top padding mt-2">
-        <img width="40" onclick="location.href='https://kalrexvorz.zone.id/'" draggable="false"
-            src="image/kalrex.png" class="navbar-img d-inline-block align-top">
-        <div class="navbar-right">
-            <a class="navbar-item rounded py-2 px-2 mr-1" href="/card"
-                target="_blank"><i class="fab fa-discord mr-1"></i></a>
-            <a class="navbar-item rounded py-2 px-2 mr-1" href="https://saweria.co/AlvinJumz" target="_blank"><i
-                    class="fa-regular fa-circle-dollar-to-slot"></i></a>
-            <a class="text-gray-400 ml-1"><span class="text-gray-500">😎</span></a>
+<!-- Navigation Bar -->
+<nav class="navbar fixed-top navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="https://kalrexvorz.zone.id/">
+            <img src="image/kalrex.png" width="40" draggable="false" alt="Kalrex Logo">
+        </a>
+        
+        <!-- Fixed Navbar Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+</button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://saweria.co/AlvinJumz" target="_blank">Donate</a></li>
+
+                <!-- Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/contact">Contact</a>
+                    </div>
+                </li>
+
+                <!-- Social Icons -->
+                <li class="nav-item">
+                    <a class="nav-link social-icon" href="https://discord.gg/" target="_blank">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link social-icon" href="https://twitter.com/ZarcoZxacy" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
 
     <div class="head">
        <img src="image/kalwho.png" alt="Profile Picture" class="head-img">
@@ -121,7 +152,7 @@
         <div class="career-cards">
             <div class="career-card">
                 <h3><i class="fas fa-school"></i> Student Council</h3>
-                <p>2022 - 2023</p>
+                <p>SMAN 1 BITUNG, 2022 - 2023</p>
                 <p class="career-desc">Im a member of student council at my middle high school SMAN 1 BITUNG</p>
             </div>
 
@@ -140,25 +171,36 @@
     </div>
 </section>
 
-   <section id="business" class="mt-10">  
+   <section id="quote" class="mt-10">  
     <div class="section padding text-center">
-        <p class="text-pink-400 florence-text-nc text-uppercase ht-margint">CONTACT</p>
-        <p class="pr-text mt-2">Let's Get in Touch</p>
-        <p class="text-gray-300 mt-1">Feel free to reach out for any inquiries or collaborations.</p>
-
-        <a href="/contact" target="_blank" class="contact-btn mt-4">Contact Me</a>
-
-        <p class="text-gray-300 mt-4">Status: <span class="text-green-500">Online</span></p>
-
-        <div class="flex flex-col md:flex-row justify-center items-center mt-4 space-y-2 md:space-y-0 md:space-x-4">
-            <a class="contact-link" href="https://discordapp.com/users/629628426378018816" target="_blank">
-                <i class="fab fa-discord"></i> Dm Discord
-            </a>
-        </div>
+        <p class="text-pink-400 florence-text-nc text-uppercase ht-margint">QUOTE OF THE DAY</p>
+        <p id="quote-text" class="pr-text mt-2"></p>
+        <p id="quote-author" class="text-gray-300 mt-1"></p>
     </div>
 </section>
 
-    <div class="section padding mt-3 mb-2">
+ <script>
+    // Function to fetch and display a random quote from the API
+    async function displayRandomQuote() {
+        try {
+            const response = await fetch("https://twaryapi.vercel.app/fun/quoteid");
+            const json = await response.json();
+            const data = json.data;
+
+            document.getElementById("quote-text").innerText = `"${data.quotes}"`;
+            document.getElementById("quote-author").innerText = `— ${data.author || "Unknown"}`;
+        } catch (error) {
+            console.error("Failed to fetch quote:", error);
+            document.getElementById("quote-text").innerText = `"An error occurred while loading the quote."`;
+            document.getElementById("quote-author").innerText = "";
+        }
+    }
+
+    // Call function on page load
+    displayRandomQuote();
+</script>
+
+    <div class="section-p padding mt-3 mb-2">
         <div class="footer">
             <span class="text-gray-500">© 2022 - 2025 Kalrex.</span>
             <span class="right-align footer-icon"><a class="text-gray-500 hover:text-gray-400"
@@ -171,7 +213,9 @@
         </div>
     </div>
 
-
+    <!-- jQuery and Bootstrap JS (For Navbar Toggle) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 </body>
 
 <script src="js/lanyard.js"></script>

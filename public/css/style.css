@@ -7,9 +7,6 @@ body {
     padding-top: 80px;
     color: white;
     text-decoration: none;
-    
-    opacity: 0;
-    animation: fadeInBody 0.8s ease-in-out forwards;
 }
 
 /* Navbar Styling */
@@ -94,6 +91,11 @@ body {
 
 .social-icon i:hover {
   transform: scale(1.2);
+}
+
+.fade-wrapper {
+    opacity: 0;
+    animation: fadeInBody 0.8s ease-in-out forwards;
 }
 
 /* Adjust Text Readability */

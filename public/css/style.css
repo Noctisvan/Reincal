@@ -7,6 +7,9 @@ body {
     padding-top: 80px;
     color: white;
     text-decoration: none;
+    
+    opacity: 0;
+    animation: fadeInBody 0.8s ease-in-out forwards;
 }
 
 /* Navbar Styling */
@@ -562,6 +565,17 @@ a:hover {
 
 .items-center {
     align-items: center;
+}
+
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 :root {
